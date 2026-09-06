@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 
-const nav = [['Platform', '/'], ['Services', '/services'], ['Model', '/model'], ['About us', '/about'], ['Contact', '/contact']]
+const nav = [['Home', '/'], ['Services', '/services'], ['Model', '/model'], ['About us', '/about'], ['Contact', '/contact']]
 
 function Mark() {
   return <Image src="/gentem-logo.svg" alt="Gentem" width={120} height={54} className="brand-logo" priority />
@@ -26,7 +26,7 @@ function Header() {
   </header>
 }
 
-function Footer() { return <footer className="footer"><div><Mark /><p>Intelligence for the work ahead.</p></div><div className="footer-links"><Link href="/contact">Start a conversation <ArrowUpRight size={14} /></Link><a href="mailto:hello@gentem.ai">hello@gentem.ai</a><span>© 2026 Gentem</span></div></footer> }
+function Footer() { return <footer className="footer"><div><Mark /><p>People are the gem.</p></div><div className="footer-links"><Link href="/contact">Start a conversation <ArrowUpRight size={14} /></Link><a href="mailto:hello@gentem.ai">hello@gentem.ai</a><span>© 2026 Gentem</span></div></footer> }
 function Shell({ children }: { children: React.ReactNode }) { return <><Header /><main>{children}</main><Footer /></> }
 
 function Gemstone() {
@@ -43,15 +43,108 @@ function Gemstone() {
 
 function Home() {
   return <Shell>
-    <section className="hero home-hero"><div className="hero-copy"><p className="eyebrow">GENTEM</p><h1>Unlocking people&apos;s <em>agency</em> in the era of AI.</h1><p className="hero-intro">Gentem helps leaders and organizations navigate the human side of AI transformation—aligning people, strategy, and technology to transform outcomes.</p><Link className="circle-link" href="/contact">Start a conversation <ArrowUpRight /></Link></div><Gemstone /></section>
-    <section className="agency-statement"><p className="eyebrow">The question we keep asking</p><h2>As technology becomes increasingly <span>agentic</span>, how can technological progress expand people&apos;s agency along with it?</h2><div className="statement-bottom"><p>We work where human potential meets technological possibility: shaping the conditions for change, not just the tools.</p><Link href="/model" className="text-link">Explore the convergence model <ArrowUpRight size={16} /></Link></div></section>
+    <section className="hero home-hero"><div className="hero-copy"><p className="eyebrow">GENTEM</p><h1>Unlocking people&apos;s <em>agency</em> in the era of AI.</h1><p className="hero-intro">Gentem helps leaders and organizations navigate the human side of digital transformation, aligning people, strategy, and technology to achieve meaningful change.</p><Link className="circle-link" href="/contact">Start a conversation <ArrowUpRight /></Link></div><Gemstone /></section>
+    <section className="agency-statement"><p className="eyebrow">The question we keep asking</p><h2>As technology becomes increasingly <span>agentic</span>, how can technological progress expand people&apos;s agency along with it?</h2><div className="statement-bottom"><p>We help organizations establish a vision for digital transformation and provide targeted support to bring that vision to life.</p><Link href="/model" className="text-link">Explore the convergence model <ArrowUpRight size={16} /></Link></div></section>
     <Principles />
   </Shell>
 }
 
-function Principles() { const items = [['01', 'People first', 'Technology should expand the range of what people can imagine, decide, and do.'], ['02', 'Make meaning visible', 'Transformation starts when strategy, culture, and technology begin to speak the same language.'], ['03', 'Design for agency', 'The best systems create more room for judgment, curiosity, and meaningful work.']]; return <section className="principles"><div className="section-label">The Gentem principles</div><div className="principle-grid">{items.map(([num, title, body]) => <article key={num}><span className="principle-num">{num}</span><h3>{title}</h3><p>{body}</p></article>)}</div></section> }
+function Principles() {
+  const items = [
+    [
+      '01',
+      'People First',
+      'People are the gem, not the technology. We put people before technological solutions and prioritize human agency, well-being, and safety over technological novelty.'
+    ],
+    [
+      '02',
+      'Co-Creative',
+      'Digital transformation is deeply human work, and meaningful change requires collective ownership. We engage the people most impacted in shaping the solutions, activating the collective agency needed to move change forward.'
+    ],
+    [
+      '03',
+      'Agile',
+      'Technology is rapidly evolving, and digital transformation is a journey, not a destination. We provide the tools and resources to experiment, learn, and iterate, helping organizations keep pace with change.'
+    ]
+  ]
 
-export function Services() { return <Shell><section className="page-intro"><p className="eyebrow">What we do</p><h1>Human-centered<br /><span>AI transformation.</span></h1><p>We help leaders and organizations navigate the human side of technological change.</p></section><section className="service-list">{[['01', 'Strategy & meaning', 'Find the opportunities that matter, align the organization around a clear point of view, and make a practical path forward.'], ['02', 'Capability & culture', 'Build the confidence, fluency, and shared language teams need to work with intelligent technology.'], ['03', 'Systems & experience', 'Shape the connective tissue between people, strategy, and technology so better outcomes become possible.'], ['04', 'Learning & momentum', 'Create the conditions for transformation to compound through reflection, experimentation, and shared practice.']].map(([num, title, body]) => <article className="service-row" key={num}><span>{num}</span><h2>{title}</h2><p>{body}</p><ArrowUpRight /></article>)}</section><section className="dark-callout"><p className="eyebrow">The result</p><h2>More agency.<br />More possibility.</h2><Link className="button-light" href="/contact">Start a conversation <ArrowUpRight size={16} /></Link></section></Shell> }
+  return (
+    <section className="principles">
+      <div className="section-label">The Gentem principles</div>
+      <div className="principle-grid">
+        {items.map(([num, title, body]) => (
+          <article key={num}>
+            <span className="principle-num">{num}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export function Services() {
+  return (
+    <Shell>
+      <section className="page-intro">
+        <p className="eyebrow">What we do</p>
+        <h1>
+          Human-centered<br />
+          <span>digital transformation.</span>
+        </h1>
+        <p>
+          We help leaders and organizations navigate the human side of digital
+          transformation, aligning people, strategy, and technology to achieve
+          meaningful change.
+        </p>
+      </section>
+
+      <section className="service-list">
+        {[
+          [
+            '01',
+            'Digital Transformation Strategy',
+            'Establish a clear vision for digital transformation, identify strategic priorities, and develop a practical path for bringing that vision to life.'
+          ],
+          [
+            '02',
+            'Organizational Readiness',
+            'Assess the people, culture, systems, structures, and capabilities needed to navigate technological change and identify where greater readiness is needed.'
+          ],
+          [
+            '03',
+            'Change & Implementation',
+            'Translate strategy into action through change management, stakeholder engagement, implementation planning, and organizational alignment.'
+          ],
+          [
+            '04',
+            'Learning & Capacity Building',
+            'Build the knowledge and capabilities leaders and teams need to navigate digital transformation, experiment responsibly, and adapt as technology evolves.'
+          ]
+        ].map(([num, title, body]) => (
+          <article className="service-row" key={num}>
+            <span>{num}</span>
+            <h2>{title}</h2>
+            <p>{body}</p>
+            <ArrowUpRight />
+          </article>
+        ))}
+      </section>
+
+      <section className="dark-callout">
+        <p className="eyebrow">The result</p>
+        <h2>
+          More agency.<br />
+          More possibility.
+        </h2>
+        <Link className="button-light" href="/contact">
+          Start a conversation <ArrowUpRight size={16} />
+        </Link>
+      </section>
+    </Shell>
+  )
+}
 
 export function Model() { return <Shell><section className="page-intro model-intro"><p className="eyebrow">The convergence model</p><h1>Where humans<br /><span>and technology meet.</span></h1><p>A shared language for the work between intention and outcome.</p></section><section className="model-image"><Image src="/convergence-model.svg" alt="Convergence model showing how powder, carving, sidehits, trees, and freestyle combine around a snowboard" width={2400} height={1600} /></section><section className="model-notes"><div><p className="eyebrow">A shared language</p><h2>Good systems are<br />built in the overlap.</h2></div><p>Agentic systems are not replacements for human judgment. They are a way to make judgment more available—to encode what matters, create useful handoffs, and give teams back their attention.</p></section></Shell> }
 export function About() { return <Shell><section className="about-hero"><div><p className="eyebrow">About Gentem</p><h1>We&apos;re interested<br />in <span>what&apos;s next.</span></h1><p>Gentem is a small, senior team working at the edge of strategy, design, and artificial intelligence.</p></div><div className="portrait-wrap"><Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ruiz-63zJLN1QYAaNNGIHthCAi71RJxjyQ4.jpg" alt="Gentem founder Ruiz" fill sizes="(max-width: 768px) 100vw, 45vw" /></div></section><section className="about-copy"><p className="eyebrow">The way we work</p><div><h2>Curious enough to ask better questions. Experienced enough to make them useful.</h2><p>We believe the future belongs to teams who can hold a clear point of view while staying open to new ways of working.</p><Link href="/contact" className="text-link">Meet us in the work <ArrowUpRight size={16} /></Link></div></section></Shell> }
