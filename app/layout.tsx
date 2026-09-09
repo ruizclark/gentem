@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Gentem helps leaders and organizations navigate the human side of digital transformation—aligning people, strategy, and technology to transform outcomes.',
   generator: 'v0.app',
   icons: {
-    icon: '/gentem-logo.svg',
+    icon: '/gentem-favicon.png',
   },
 }
 
