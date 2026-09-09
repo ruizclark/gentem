@@ -4,7 +4,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Gentem - Unlocking people\'s agency in the era of AI',
-  description: 'Gentem helps leaders and organizations navigate the human side of AI transformation—aligning people, strategy, and technology to transform outcomes.',
+  description: 'Gentem helps leaders and organizations navigate the human side of digital transformation—aligning people, strategy, and technology to transform outcomes.',
   generator: 'v0.app',
   icons: {
     icon: '/gentem-logo.svg',
