@@ -26,7 +26,7 @@ function Header() {
   </header>
 }
 
-function Footer() { return <footer className="footer"><div><Mark /><p>People are the gem.</p></div><div className="footer-links"><Link href="/contact">Start a conversation <ArrowUpRight size={14} /></Link><a href="mailto:info@gentem.ai">info@gentem.ai</a><span>© 2026 Gentem</span></div></footer> }
+function Footer() { return <footer className="footer"><div><Mark /><p>People are the gem.</p></div><div className="footer-links"><Link href="/contact">Start a conversation <ArrowUpRight size={14} /></Link><a href="mailto:info@gentem.us">info@gentem.us</a><span>© 2026 Gentem</span></div></footer> }
 function Shell({ children }: { children: React.ReactNode }) { return <><Header /><main>{children}</main><Footer /></> }
 
 function Gemstone() {
@@ -524,8 +524,8 @@ export function Contact() {
             want to go. We&apos;ll explore how Gentem can help.
           </p>
 
-          <a className="email-link" href="mailto:info@gentem.ai">
-            info@gentem.ai <ArrowUpRight />
+          <a className="email-link" href="mailto:info@gentem.us">
+            info@gentem.us <ArrowUpRight />
           </a>
         </div>
 
