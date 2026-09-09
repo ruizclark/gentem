@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 
-const nav = [['Home', '/'], ['Services', '/services'], ['Model', '/model'], ['About us', '/about'], ['Contact', '/contact']]
+const nav = [['Home', '/'], ['Services', '/services'], ['Model', '/model'], ['About', '/about'], ['Contact', '/contact']]
 
 function Mark() {
   return <Image src="/gentem-logo.svg" alt="Gentem" width={120} height={54} className="brand-logo" priority />
@@ -26,7 +26,7 @@ function Header() {
   </header>
 }
 
-function Footer() { return <footer className="footer"><div><Mark /><p>People are the gem.</p></div><div className="footer-links"><Link href="/contact">Start a conversation <ArrowUpRight size={14} /></Link><a href="mailto:hello@gentem.ai">hello@gentem.ai</a><span>© 2026 Gentem</span></div></footer> }
+function Footer() { return <footer className="footer"><div><Mark /><p>People are the gem.</p></div><div className="footer-links"><Link href="/contact">Start a conversation <ArrowUpRight size={14} /></Link><a href="mailto:info@gentem.ai">info@gentem.ai</a><span>© 2026 Gentem</span></div></footer> }
 function Shell({ children }: { children: React.ReactNode }) { return <><Header /><main>{children}</main><Footer /></> }
 
 function Gemstone() {
@@ -504,5 +504,52 @@ export function About() {
 }
 
 export function Portal() { const [email, setEmail] = useState(''); const [submitted, setSubmitted] = useState(false); return <Shell><section className="portal-page"><div className="portal-mark"><Image src="/gentem-logo.svg" alt="Gentem mark" width={72} height={72} /></div><p className="eyebrow">Client portal</p><h1>Welcome back.</h1><p>Enter your email to access your workspace.</p>{submitted ? <div className="portal-message">Thanks—if you have an active workspace, we&apos;ll send an access link shortly.</div> : <form onSubmit={(e) => { e.preventDefault(); if (email) setSubmitted(true) }}><label htmlFor="portal-email">Work email</label><input id="portal-email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@company.com" /><button type="submit">Continue <ArrowUpRight size={16} /></button></form>}<Link href="/contact" className="text-link">Need help? Contact Gentem <ArrowUpRight size={15} /></Link></section></Shell> }
-export function Contact() { return <Shell><section className="contact-page"><div><p className="eyebrow">Start a conversation</p><h1>Let&apos;s make<br /><span>something useful.</span></h1><p className="contact-lede">Tell us what you&apos;re thinking about. We&apos;ll bring questions, not a sales deck.</p><a className="email-link" href="mailto:hello@gentem.ai">hello@gentem.ai <ArrowUpRight /></a></div><form className="contact-form" onSubmit={(e) => e.preventDefault()}><label htmlFor="name">Your name</label><input id="name" placeholder="Name" /><label htmlFor="email">Email</label><input id="email" type="email" placeholder="you@company.com" /><label htmlFor="message">What&apos;s on your mind?</label><textarea id="message" rows={5} placeholder="A little context goes a long way." /><button type="submit">Send inquiry <ArrowUpRight size={16} /></button></form></section></Shell> }
+
+export function Contact() {
+  return (
+    <Shell>
+      <section className="contact-page">
+        <div>
+          <p className="eyebrow">Start a conversation</p>
+
+          <h1>
+            Let&apos;s talk about
+            <br />
+            <span>human-centered change.</span>
+          </h1>
+
+          <p className="contact-lede">
+            Looking for support with digital transformation? Tell us about your
+            organization, the challenge you&apos;re navigating, and where you
+            want to go. We&apos;ll explore how Gentem can help.
+          </p>
+
+          <a className="email-link" href="mailto:info@gentem.ai">
+            info@gentem.ai <ArrowUpRight />
+          </a>
+        </div>
+
+        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <label htmlFor="name">Your name</label>
+          <input id="name" placeholder="Name" />
+
+          <label htmlFor="email">Email</label>
+          <input id="email" type="email" placeholder="you@company.com" />
+
+          <label htmlFor="message">How can we help?</label>
+          <textarea
+            id="message"
+            rows={5}
+            placeholder="Tell us a little about your organization and what you're navigating."
+          />
+
+          <button type="submit">
+            Send inquiry <ArrowUpRight size={16} />
+          </button>
+        </form>
+      </section>
+    </Shell>
+  )
+}
+
 export default function Page() { const pathname = usePathname(); if (pathname === '/services') return <Services />; if (pathname === '/model') return <Model />; if (pathname === '/about') return <About />; if (pathname === '/portal') return <Portal />; if (pathname === '/contact') return <Contact />; return <Home /> }
